@@ -10,7 +10,7 @@ import io.provenance.spec.ContractSpecConfig
 import io.provenance.spec.RecordSpecConfig
 import io.provenance.spec.ScopeSpecConfig
 
-object SpecWriter {
+object SpecBuilder {
 
     // Builds the Provenance metadata transaction for writing contract/scope/record specifications to the chain
     fun buildMetadataSpecificationTransaction(

@@ -1,5 +1,6 @@
 package io.provenance.spec
 
+import io.provenance.spec.util.SpecBuilder
 import java.util.*
 
 data class ContractSpecConfig(
