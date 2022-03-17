@@ -3,8 +3,6 @@ package io.provenance.spec
 import io.provenance.spec.util.SpecWriter
 import java.util.*
 
-const val websiteUrl = "https://github.com/provenance-io/asset-specifications"
-
 object MortgageSpecification {
 
     val MortgageScopeSpecification = ScopeSpecConfig(
@@ -23,8 +21,8 @@ object MortgageSpecification {
     val MortgageContractSpecification = ContractSpecConfig(
         id = UUID.fromString("f4ac5c9c-a220-4403-85d3-9f0eb62b8bc1"),
         contractClassname = "io.provenance.spec.OnboardMortgageContractSpec",
-        name = "Mint/Onboard Mortgage NFT",
-        description = "Mint/Onboard Mortgage NFT Contract Specification provided by the Provenance Blockchain Foundation",
+        name = "Onboard Mortgage NFT",
+        description = "Mint Mortgage NFT Contract Specification provided by the Provenance Blockchain Foundation",
         websiteUrl = websiteUrl
     )
 

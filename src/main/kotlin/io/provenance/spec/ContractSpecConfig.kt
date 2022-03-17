@@ -23,3 +23,5 @@ data class RecordSpecConfig(
     val name: String, // fact name
     val typeClassname: String
 )
+
+const val websiteUrl = "https://github.com/provenance-io/asset-specifications"
