@@ -11,14 +11,6 @@ object PayableSpecification : AssetSpecification {
         websiteUrl = websiteUrl
     )
 
-    override val recordSpecConfigs = listOf(
-        RecordSpecConfig(
-            id = UUID.fromString("2bd4e986-0964-46bb-a8b3-8d4989a287e2"),
-            name = "payable",
-            typeClassname = "io.provenance.model.v1.Asset",
-        )
-    )
-
     override val contractSpecConfigs = listOf(
         ContractSpecConfig(
             id = UUID.fromString("a965a903-af84-4322-a645-d11ceb55c17f"),
@@ -28,4 +20,14 @@ object PayableSpecification : AssetSpecification {
             websiteUrl = websiteUrl
         )
     )
+
+    override val recordSpecConfigs = listOf(
+        RecordSpecConfig(
+            id = UUID.fromString("2bd4e986-0964-46bb-a8b3-8d4989a287e2"),
+            name = "payable",
+            typeClassname = "io.provenance.model.v1.Asset",
+            contractSpecId = contractSpecConfigs.first().id
+        )
+    )
+
 }

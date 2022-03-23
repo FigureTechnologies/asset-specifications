@@ -22,7 +22,8 @@ data class ScopeSpecConfig(
 data class RecordSpecConfig(
     val id: UUID,
     val name: String, // fact name
-    val typeClassname: String
+    val typeClassname: String,
+    val contractSpecId: UUID
 )
 
 const val websiteUrl = "https://github.com/provenance-io/asset-specifications"

@@ -1,8 +1,6 @@
 package io.provenance.spec.util
 
-import cosmos.tx.v1beta1.TxOuterClass
-import io.provenance.client.protobuf.extensions.toAny
-import io.provenance.client.protobuf.extensions.toTxBody
+import com.google.protobuf.Message
 import io.provenance.metadata.v1.*
 import io.provenance.scope.util.MetadataAddress
 import io.provenance.scope.util.toByteString
@@ -14,19 +12,18 @@ object SpecBuilder {
 
     // Builds the Provenance metadata transaction for writing contract/scope/record specifications to the chain
     fun buildMetadataSpecificationTransaction(
-        owner: String,
+        ownerAddress: String,
         scopeSpec: ScopeSpecConfig,
         recordSpecList: List<RecordSpecConfig>,
         contractSpecList: List<ContractSpecConfig>,
-    ): TxOuterClass.TxBody {
+    ): List<Message> {
 
-        val contractSpecsMsgs = buildContractSpecs(contractSpecList, owner)
-        val scopeSpecMsg = buildScopeSpec(owner, scopeSpec, contractSpecsMsgs)
-        val recordSpecMsgs = buildRecordSpecs(owner, recordSpecList)
+        val contractSpecsMsgs = buildContractSpecs(contractSpecList, ownerAddress)
+        val scopeSpecMsg = buildScopeSpec(ownerAddress, scopeSpec, contractSpecsMsgs)
+        val recordSpecMsgs = buildRecordSpecs(ownerAddress, recordSpecList)
 
         return (contractSpecsMsgs + scopeSpecMsg + recordSpecMsgs)
-            .map { it.toAny() }
-            .toTxBody()
+
     }
 
 
@@ -37,13 +34,14 @@ object SpecBuilder {
     ): MsgWriteScopeSpecificationRequest =
 
         MsgWriteScopeSpecificationRequest.newBuilder().apply {
+            addSigners(owner)
             specUuid = scopeSpec.id.toString()
             specificationBuilder.apply {
                 descriptionBuilder.apply {
-                        name = scopeSpec.name
-                        description = scopeSpec.description
-                        websiteUrl = scopeSpec.websiteUrl
-                    }
+                    name = scopeSpec.name
+                    description = scopeSpec.description
+                    websiteUrl = scopeSpec.websiteUrl
+                }
             }
                 .addAllContractSpecIds(
                     contractSpecsMsgs.map { it.specification.specificationId }
@@ -54,20 +52,21 @@ object SpecBuilder {
                         PartyType.PARTY_TYPE_OWNER
                     )
                 )
-        }.addAllSigners(listOf(owner)).build()
+        }.build()
 
 
     private fun buildRecordSpecs(
         owner: String,
         recordSpecs: List<RecordSpecConfig>
     ): List<MsgWriteRecordSpecificationRequest> = recordSpecs.map { recordSpec ->
-        // write-record-specification
         MsgWriteRecordSpecificationRequest.newBuilder().apply {
+            addSigners(owner)
+            contractSpecUuid = recordSpec.contractSpecId.toString()
             specificationBuilder
                 .setName(recordSpec.name)
                 .setTypeName(recordSpec.typeClassname)
                 .setSpecificationId(
-                    MetadataAddress.forRecordSpecification(recordSpec.id, recordSpec.name).bytes.toByteString()
+                    MetadataAddress.forRecordSpecification(recordSpec.contractSpecId, recordSpec.name).bytes.toByteString()
                 )
                 .setResultType(DefinitionType.DEFINITION_TYPE_RECORD)
                 .addAllResponsibleParties(
@@ -82,7 +81,7 @@ object SpecBuilder {
                         hash = recordSpec.name
                     }
                 )
-        }.addAllSigners(listOf(owner)).build()
+        }.build()
     }
 
     fun buildContractSpecs(
@@ -91,6 +90,7 @@ object SpecBuilder {
     ): List<MsgWriteContractSpecificationRequest> = contractSpecList.map { contractSpec ->
 
         MsgWriteContractSpecificationRequest.newBuilder().apply {
+            addSigners(owner)
             specificationBuilder
                 .setSpecificationId(MetadataAddress.forContractSpecification(contractSpec.id).bytes.toByteString())
                 .setClassName(contractSpec.contractClassname)
@@ -101,6 +101,6 @@ object SpecBuilder {
                         PartyType.PARTY_TYPE_OWNER
                     )
                 )
-        }.addAllSigners(listOf(owner)).build()
+        }.build()
     }
 }

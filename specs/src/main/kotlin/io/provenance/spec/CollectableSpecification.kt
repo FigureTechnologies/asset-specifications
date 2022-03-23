@@ -11,14 +11,6 @@ object CollectableSpecification : AssetSpecification {
         websiteUrl = websiteUrl
     )
 
-    override val recordSpecConfigs = listOf(
-        RecordSpecConfig(
-            id = UUID.fromString("73fdbb5d-4234-40e6-abef-dd6c044b4237"),
-            name = "collectable",
-            typeClassname = "io.provenance.model.v1.Asset",
-        )
-    )
-
     override val contractSpecConfigs = listOf(
         ContractSpecConfig(
             id = UUID.fromString("1bef03c6-3f86-481b-927b-5dbec22a7ab2"),
@@ -29,5 +21,13 @@ object CollectableSpecification : AssetSpecification {
         )
     )
 
+    override val recordSpecConfigs = listOf(
+        RecordSpecConfig(
+            id = UUID.fromString("73fdbb5d-4234-40e6-abef-dd6c044b4237"),
+            name = "collectable",
+            typeClassname = "io.provenance.model.v1.Asset",
+            contractSpecId = contractSpecConfigs.first().id
+        )
+    )
 
 }

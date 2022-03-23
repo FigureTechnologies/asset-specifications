@@ -16,11 +16,11 @@ val AssetSpecifications: List<AssetSpecification> = listOf(
 interface AssetSpecification {
 
     val scopeSpecConfig: ScopeSpecConfig
-    val recordSpecConfigs: List<RecordSpecConfig>
     val contractSpecConfigs: List<ContractSpecConfig>
+    val recordSpecConfigs: List<RecordSpecConfig>
 
-    fun specificationTx(owner: String) = SpecBuilder.buildMetadataSpecificationTransaction(
-        owner = owner,
+    fun specificationMsgs(ownerAddress: String) = SpecBuilder.buildMetadataSpecificationTransaction(
+        ownerAddress = ownerAddress,
         scopeSpec = scopeSpecConfig,
         recordSpecList = recordSpecConfigs,
         contractSpecList = contractSpecConfigs

@@ -11,14 +11,6 @@ object PersonalLoanSpecification : AssetSpecification {
         websiteUrl = websiteUrl
     )
 
-    override val recordSpecConfigs = listOf(
-        RecordSpecConfig(
-            id = UUID.fromString("93c4af8a-fa32-4bd9-8207-005fd52bcbda"),
-            name = "personalLoan",
-            typeClassname = "io.provenance.model.v1.Asset",
-        )
-    )
-
     override val contractSpecConfigs = listOf(
         ContractSpecConfig(
             id = UUID.fromString("746b698c-f63d-489e-9b42-8c61a7316c62"),
@@ -29,4 +21,12 @@ object PersonalLoanSpecification : AssetSpecification {
         )
     )
 
+    override val recordSpecConfigs = listOf(
+        RecordSpecConfig(
+            id = UUID.fromString("93c4af8a-fa32-4bd9-8207-005fd52bcbda"),
+            name = "personalLoan",
+            typeClassname = "io.provenance.model.v1.Asset",
+            contractSpecId = contractSpecConfigs.first().id
+        )
+    )
 }

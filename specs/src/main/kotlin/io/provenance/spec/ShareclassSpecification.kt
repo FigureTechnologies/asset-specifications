@@ -11,14 +11,6 @@ object ShareclassSpecification : AssetSpecification {
         websiteUrl = websiteUrl
     )
 
-    override val recordSpecConfigs = listOf(
-        RecordSpecConfig(
-            id = UUID.fromString("ee9ec648-c136-4a37-96dd-5a672a205000"),
-            name = "shareclass",
-            typeClassname = "io.provenance.model.v1.Asset",
-        )
-    )
-
     override val contractSpecConfigs = listOf(
         ContractSpecConfig(
             id = UUID.fromString("a1c11ddf-b9c7-41fd-b1c6-bb538a93480c"),
@@ -29,4 +21,12 @@ object ShareclassSpecification : AssetSpecification {
         )
     )
 
+    override val recordSpecConfigs = listOf(
+        RecordSpecConfig(
+            id = UUID.fromString("ee9ec648-c136-4a37-96dd-5a672a205000"),
+            name = "shareclass",
+            typeClassname = "io.provenance.model.v1.Asset",
+            contractSpecId = contractSpecConfigs.first().id
+        )
+    )
 }

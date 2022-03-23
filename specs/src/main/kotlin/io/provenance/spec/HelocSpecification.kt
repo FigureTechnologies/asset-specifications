@@ -11,14 +11,6 @@ object HELOCSpecification : AssetSpecification {
         websiteUrl = websiteUrl
     )
 
-    override val recordSpecConfigs= listOf(
-        RecordSpecConfig(
-            id = UUID.fromString("d93e855e-a1aa-4f40-a653-34e89272d845"),
-            name = "heloc",
-            typeClassname = "io.provenance.model.v1.Asset",
-        )
-    )
-
     override val contractSpecConfigs = listOf(
         ContractSpecConfig(
             id = UUID.fromString("95732991-f4f2-4e1b-8022-43d150031315"),
@@ -29,4 +21,12 @@ object HELOCSpecification : AssetSpecification {
         )
     )
 
+    override val recordSpecConfigs = listOf(
+        RecordSpecConfig(
+            id = UUID.fromString("d93e855e-a1aa-4f40-a653-34e89272d845"),
+            name = "heloc",
+            typeClassname = "io.provenance.model.v1.Asset",
+            contractSpecId = contractSpecConfigs.first().id
+        )
+    )
 }
