@@ -1,7 +1,12 @@
 package io.provenance.spec.util
 
 import com.google.protobuf.Message
-import io.provenance.metadata.v1.*
+import io.provenance.metadata.v1.DefinitionType
+import io.provenance.metadata.v1.InputSpecification
+import io.provenance.metadata.v1.MsgWriteContractSpecificationRequest
+import io.provenance.metadata.v1.MsgWriteRecordSpecificationRequest
+import io.provenance.metadata.v1.MsgWriteScopeSpecificationRequest
+import io.provenance.metadata.v1.PartyType
 import io.provenance.scope.util.MetadataAddress
 import io.provenance.scope.util.toByteString
 import io.provenance.spec.ContractSpecConfig

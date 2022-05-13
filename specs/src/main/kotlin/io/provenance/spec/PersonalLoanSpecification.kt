@@ -1,11 +1,11 @@
 package io.provenance.spec
 
-import java.util.*
+import io.provenance.scope.util.toUuid
 
 object PersonalLoanSpecification : AssetSpecification {
 
     override val scopeSpecConfig = ScopeSpecConfig(
-        id = UUID.fromString("61ca59d2-7a11-4ca7-8035-eef698656dc8"),
+        id = "61ca59d2-7a11-4ca7-8035-eef698656dc8".toUuid(),
         name = "Personal Loan NFT",
         description = "Personal Loan NFT Specification provided by the Provenance Blockchain Foundation",
         websiteUrl = websiteUrl
@@ -13,7 +13,7 @@ object PersonalLoanSpecification : AssetSpecification {
 
     override val contractSpecConfigs = listOf(
         ContractSpecConfig(
-            id = UUID.fromString("746b698c-f63d-489e-9b42-8c61a7316c62"),
+            id = "746b698c-f63d-489e-9b42-8c61a7316c62".toUuid(),
             contractClassname = "io.provenance.spec.OnboardPersonal LoanContractSpec",
             name = "Onboard Personal Loan NFT",
             description = "Mint Personal Loan NFT Contract Specification provided by the Provenance Blockchain Foundation",
@@ -23,7 +23,7 @@ object PersonalLoanSpecification : AssetSpecification {
 
     override val recordSpecConfigs = listOf(
         RecordSpecConfig(
-            id = UUID.fromString("93c4af8a-fa32-4bd9-8207-005fd52bcbda"),
+            id = "93c4af8a-fa32-4bd9-8207-005fd52bcbda".toUuid(),
             name = "personalLoan",
             typeClassname = "io.provenance.model.v1.Asset",
             contractSpecId = contractSpecConfigs.first().id

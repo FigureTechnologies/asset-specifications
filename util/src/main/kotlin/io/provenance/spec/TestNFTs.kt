@@ -1,6 +1,5 @@
 package io.provenance.spec
 
-
 import com.google.protobuf.ByteString
 import com.google.protobuf.Message
 import cosmos.crypto.secp256k1.Keys
@@ -11,7 +10,6 @@ import io.provenance.client.grpc.PbClient
 import io.provenance.client.grpc.Signer
 import io.provenance.client.protobuf.extensions.toAny
 import io.provenance.client.protobuf.extensions.toTxBody
-import io.provenance.client.wallet.NetworkType
 import io.provenance.hdwallet.bip39.MnemonicWords
 import io.provenance.hdwallet.wallet.Account
 import io.provenance.hdwallet.wallet.Wallet
@@ -19,6 +17,7 @@ import io.provenance.metadata.v1.*
 import io.provenance.scope.util.MetadataAddress
 import io.provenance.scope.util.ProtoJsonUtil.toJson
 import io.provenance.scope.util.toByteString
+import io.provenance.spec.util.ProvenanceNetworkType
 import java.net.URI
 import java.util.*
 
@@ -43,12 +42,12 @@ fun main(args: Array<String>) {
 
     val signer = object : Signer {
         val wallet = Wallet.fromMnemonic(
-            hrp = NetworkType.TESTNET.prefix,
+            hrp = ProvenanceNetworkType.TESTNET.prefix,
             passphrase = "",
             mnemonicWords = MnemonicWords.of(mnemonic),
             testnet = true
         )
-        val account: Account = wallet[NetworkType.TESTNET.path]
+        val account: Account = wallet[ProvenanceNetworkType.TESTNET.hdPath]
 
         override fun address(): String = account.address.value
 

@@ -1,7 +1,6 @@
 package io.provenance.spec
 
-import io.provenance.spec.util.SpecBuilder
-import java.util.*
+import java.util.UUID
 
 data class ContractSpecConfig(
     val id: UUID,
