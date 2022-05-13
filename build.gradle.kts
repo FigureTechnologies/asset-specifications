@@ -18,7 +18,7 @@ plugins {
 
 configurations.forEach { it.exclude("org.slf4j", "slf4j-api") }
 
-nexusPublishing {
+configure<io.github.gradlenexus.publishplugin.NexusPublishExtension> {
     repositories {
         sonatype {
             nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
