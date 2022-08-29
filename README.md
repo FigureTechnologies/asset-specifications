@@ -13,12 +13,12 @@ These core components comprise the baseline needed for generating new [Provenanc
 [![Maven Central][maven-badge]][maven-url]
 [![Apache 2.0 License][license-badge]][license-url]
 
-[license-badge]: https://img.shields.io/github/license/provenance-io/asset-specifications.svg
-[license-url]: https://github.com/provenance-io/asset-specifications/blob/main/LICENSE
-[maven-badge]: https://maven-badges.herokuapp.com/maven-central/io.provenance.spec/asset-specs/badge.svg
-[maven-url]: https://maven-badges.herokuapp.com/maven-central/io.provenance.spec/asset-specs
-[release-badge]: https://img.shields.io/github/tag/provenance-io/asset-specifications.svg
-[release-latest]: https://github.com/provenance-io/asset-specifications/releases/latest
+[license-badge]: https://img.shields.io/github/license/FigureTechnologies/asset-specifications.svg
+[license-url]: https://github.com/FigureTechnologies/asset-specifications/blob/main/LICENSE
+[maven-badge]: https://maven-badges.herokuapp.com/maven-central/tech.figure.spec/asset-specs/badge.svg
+[maven-url]: https://maven-badges.herokuapp.com/maven-central/tech.figure.spec/asset-specs
+[release-badge]: https://img.shields.io/github/tag/FigureTechnologies/asset-specifications.svg
+[release-latest]: https://github.com/FigureTechnologies/asset-specifications/releases/latest
 
 ### Specifications on Testnet
 
@@ -42,18 +42,18 @@ Shareclass NFT: https://explorer.test.provenance.io/nft/c328573f-08cd-4cd8-956d-
 ### Using the asset-specs library
 
 To create Provenance Blockchain msg protos that will onboard a scope specification, simply use the provided
-[AssetSpecifications](specs/src/main/kotlin/io/provenance/spec/AssetSpecification.kt/) object, or refer to a specification
+[AssetSpecifications](specs/src/main/kotlin/tech/figure/spec/AssetSpecification.kt/) object, or refer to a specification
 directly:
 
 ```kotlin
 import com.google.protobuf.Message
 import io.provenance.scope.util.toUuid
-import io.provenance.spec.AssetSpecification
-import io.provenance.spec.AssetSpecifications
-import io.provenance.spec.ContractSpecConfig
-import io.provenance.spec.HELOCSpecification
-import io.provenance.spec.RecordSpecConfig
-import io.provenance.spec.ScopeSpecConfig
+import tech.figure.spec.AssetSpecification
+import tech.figure.spec.AssetSpecifications
+import tech.figure.spec.ContractSpecConfig
+import tech.figure.spec.HELOCSpecification
+import tech.figure.spec.RecordSpecConfig
+import tech.figure.spec.ScopeSpecConfig
 
 // To generate all messages, owned by the same address
 fun generateAllSpecificationMessages(specOwnerBech32Address: String): List<Message> = AssetSpecifications

@@ -1,4 +1,4 @@
-package io.provenance.spec.util
+package tech.figure.spec.util
 
 import com.google.protobuf.Message
 import io.provenance.metadata.v1.DefinitionType
@@ -9,9 +9,9 @@ import io.provenance.metadata.v1.MsgWriteScopeSpecificationRequest
 import io.provenance.metadata.v1.PartyType
 import io.provenance.scope.util.MetadataAddress
 import io.provenance.scope.util.toByteString
-import io.provenance.spec.ContractSpecConfig
-import io.provenance.spec.RecordSpecConfig
-import io.provenance.spec.ScopeSpecConfig
+import tech.figure.spec.ContractSpecConfig
+import tech.figure.spec.RecordSpecConfig
+import tech.figure.spec.ScopeSpecConfig
 
 object SpecBuilder {
 

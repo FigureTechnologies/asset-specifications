@@ -27,9 +27,9 @@ configure<PublishingExtension> {
             from(components["java"])
 
             pom {
-                name.set("Provenance Asset Specifications")
+                name.set("Figure Technologies Asset Specifications")
                 description.set("Scope specifications for classifying various types of Asset proto")
-                url.set("https://provenance.io")
+                url.set("https://figure.tech")
                 licenses {
                     license {
                         name.set("The Apache License, Version 2.0")
@@ -51,9 +51,9 @@ configure<PublishingExtension> {
                 }
 
                 scm {
-                    developerConnection.set("git@github.com:provenance.io/asset-specifications")
-                    connection.set("https://github.com/provenance-io/asset-specifications.git")
-                    url.set("https://github.com/provenance-io/asset-specifications")
+                    developerConnection.set("git@github.com:FigureTechnologies/asset-specifications")
+                    connection.set("https://github.com/FigureTechnologies/asset-specifications.git")
+                    url.set("https://github.com/FigureTechnologies/asset-specifications")
                 }
             }
         }
