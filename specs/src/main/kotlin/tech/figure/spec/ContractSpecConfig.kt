@@ -1,4 +1,4 @@
-package io.provenance.spec
+package tech.figure.spec
 
 import java.util.UUID
 
@@ -25,4 +25,4 @@ data class RecordSpecConfig(
     val contractSpecId: UUID
 )
 
-const val websiteUrl = "https://github.com/provenance-io/asset-specifications"
+const val websiteUrl = "https://github.com/FigureTechnologies/asset-specifications"

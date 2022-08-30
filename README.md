@@ -13,26 +13,12 @@ These core components comprise the baseline needed for generating new [Provenanc
 [![Maven Central][maven-badge]][maven-url]
 [![Apache 2.0 License][license-badge]][license-url]
 
-[license-badge]: https://img.shields.io/github/license/provenance-io/asset-specifications.svg
-[license-url]: https://github.com/provenance-io/asset-specifications/blob/main/LICENSE
-[maven-badge]: https://maven-badges.herokuapp.com/maven-central/io.provenance.spec/asset-specs/badge.svg
-[maven-url]: https://maven-badges.herokuapp.com/maven-central/io.provenance.spec/asset-specs
-[release-badge]: https://img.shields.io/github/tag/provenance-io/asset-specifications.svg
-[release-latest]: https://github.com/provenance-io/asset-specifications/releases/latest
-
-### Specifications on Testnet
-
-https://explorer.test.provenance.io/tx/E1B42D0ACCA2E6674E652C88CA3DC57789A5881558B4D46C91F149244D068BF8
-
-NFT Examples: 
-
-Collectable NFT: https://explorer.test.provenance.io/nft/78f034ed-9b7e-4a6e-af14-986bf41d2478
-HELOC NFT: https://explorer.test.provenance.io/nft/985bd660-6d5a-4400-8de2-502830208121
-Mortgage NFT: https://explorer.test.provenance.io/nft/ed14f4af-217c-48f9-8082-25ccf3547b33
-Payable NFT: https://explorer.test.provenance.io/nft/bce44beb-e4e6-4115-8660-f20687b23da4
-Personal Loan NFT: https://explorer.test.provenance.io/nft/8972656d-cd13-4a5d-86d0-942e2a9f0b
-Property NFT: https://explorer.test.provenance.io/nft/9704e06c-43fe-4db9-bc27-bcb2d7fe54bb
-Shareclass NFT: https://explorer.test.provenance.io/nft/c328573f-08cd-4cd8-956d-22d6ab45875c
+[license-badge]: https://img.shields.io/github/license/FigureTechnologies/asset-specifications.svg
+[license-url]: https://github.com/FigureTechnologies/asset-specifications/blob/main/LICENSE
+[maven-badge]: https://maven-badges.herokuapp.com/maven-central/tech.figure.spec/asset-specs/badge.svg
+[maven-url]: https://maven-badges.herokuapp.com/maven-central/tech.figure.spec/asset-specs
+[release-badge]: https://img.shields.io/github/tag/FigureTechnologies/asset-specifications.svg
+[release-latest]: https://github.com/FigureTechnologies/asset-specifications/releases/latest
 
 ### Release Process
 - All new features merge to develop
@@ -42,18 +28,18 @@ Shareclass NFT: https://explorer.test.provenance.io/nft/c328573f-08cd-4cd8-956d-
 ### Using the asset-specs library
 
 To create Provenance Blockchain msg protos that will onboard a scope specification, simply use the provided
-[AssetSpecifications](specs/src/main/kotlin/io/provenance/spec/AssetSpecification.kt/) object, or refer to a specification
+[AssetSpecifications](specs/src/main/kotlin/tech/figure/spec/AssetSpecification.kt/) object, or refer to a specification
 directly:
 
 ```kotlin
 import com.google.protobuf.Message
 import io.provenance.scope.util.toUuid
-import io.provenance.spec.AssetSpecification
-import io.provenance.spec.AssetSpecifications
-import io.provenance.spec.ContractSpecConfig
-import io.provenance.spec.HELOCSpecification
-import io.provenance.spec.RecordSpecConfig
-import io.provenance.spec.ScopeSpecConfig
+import tech.figure.spec.AssetSpecification
+import tech.figure.spec.AssetSpecifications
+import tech.figure.spec.ContractSpecConfig
+import tech.figure.spec.HELOCSpecification
+import tech.figure.spec.RecordSpecConfig
+import tech.figure.spec.ScopeSpecConfig
 
 // To generate all messages, owned by the same address
 fun generateAllSpecificationMessages(specOwnerBech32Address: String): List<Message> = AssetSpecifications

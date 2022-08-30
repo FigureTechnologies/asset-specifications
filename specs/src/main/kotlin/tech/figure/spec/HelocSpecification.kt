@@ -1,29 +1,29 @@
-package io.provenance.spec
+package tech.figure.spec
 
 import io.provenance.scope.util.toUuid
 
 object HELOCSpecification : AssetSpecification {
 
     override val scopeSpecConfig = ScopeSpecConfig(
-        id = "7205eaf2-4e1c-486c-a5f2-c0794f28a780".toUuid(),
+        id = "19e637d0-27eb-11ed-9c63-878b98ca90d8".toUuid(),
         name = "HELOC NFT",
-        description = "HELOC NFT Specification provided by the Provenance Blockchain Foundation",
+        description = "HELOC NFT Specification provided by Figure Technologies",
         websiteUrl = websiteUrl
     )
 
     override val contractSpecConfigs = listOf(
         ContractSpecConfig(
-            id = "95732991-f4f2-4e1b-8022-43d150031315".toUuid(),
-            contractClassname = "io.provenance.spec.OnboardHELOCContractSpec",
+            id = "1e769c7c-27eb-11ed-b7e1-8bcc0de384bd".toUuid(),
+            contractClassname = "tech.figure.spec.OnboardHELOCContractSpec",
             name = "Onboard HELOC NFT",
-            description = "Mint HELOC NFT Contract Specification provided by the Provenance Blockchain Foundation",
+            description = "Mint HELOC NFT Contract Specification provided by Figure Technologies",
             websiteUrl = websiteUrl
         )
     )
 
     override val recordSpecConfigs = listOf(
         RecordSpecConfig(
-            id = "d93e855e-a1aa-4f40-a653-34e89272d845".toUuid(),
+            id = "2d36b1ca-27eb-11ed-8e75-cf2150f5e5e4".toUuid(),
             name = "heloc",
             typeClassname = "io.provenance.model.v1.Asset",
             contractSpecId = contractSpecConfigs.first().id

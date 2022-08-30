@@ -1,4 +1,4 @@
-package io.provenance.spec.util
+package tech.figure.spec.util
 
 import io.provenance.client.wallet.NetworkType
 import io.provenance.hdwallet.hrp.Hrp
