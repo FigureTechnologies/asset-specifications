@@ -1,29 +1,29 @@
-package io.provenance.spec
+package tech.figure.spec
 
 import io.provenance.scope.util.toUuid
 
 object PersonalLoanSpecification : AssetSpecification {
 
     override val scopeSpecConfig = ScopeSpecConfig(
-        id = "61ca59d2-7a11-4ca7-8035-eef698656dc8".toUuid(),
+        id = "54c4b26e-27eb-11ed-8c87-53fbe8bf8d09".toUuid(),
         name = "Personal Loan NFT",
-        description = "Personal Loan NFT Specification provided by the Provenance Blockchain Foundation",
+        description = "Personal Loan NFT Specification provided by Figure Technologies",
         websiteUrl = websiteUrl
     )
 
     override val contractSpecConfigs = listOf(
         ContractSpecConfig(
-            id = "746b698c-f63d-489e-9b42-8c61a7316c62".toUuid(),
-            contractClassname = "io.provenance.spec.OnboardPersonal LoanContractSpec",
+            id = "57cab698-27eb-11ed-b4db-9b502cfcbe6a".toUuid(),
+            contractClassname = "tech.figure.spec.OnboardPersonalLoanContractSpec",
             name = "Onboard Personal Loan NFT",
-            description = "Mint Personal Loan NFT Contract Specification provided by the Provenance Blockchain Foundation",
+            description = "Mint Personal Loan NFT Contract Specification provided by Figure Technologies",
             websiteUrl = websiteUrl
         )
     )
 
     override val recordSpecConfigs = listOf(
         RecordSpecConfig(
-            id = "93c4af8a-fa32-4bd9-8207-005fd52bcbda".toUuid(),
+            id = "5d00931c-27eb-11ed-9e62-3369af5209b7".toUuid(),
             name = "personalLoan",
             typeClassname = "io.provenance.model.v1.Asset",
             contractSpecId = contractSpecConfigs.first().id

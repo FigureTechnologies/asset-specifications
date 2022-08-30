@@ -5,7 +5,7 @@ plugins {
     id("java-library")
 }
 
-group = "io.provenance.spec"
+group = "tech.figure.spec"
 version = project.property("version")?.takeIf { it != "unspecified" } ?: "1.0-SNAPSHOT"
 
 repositories {

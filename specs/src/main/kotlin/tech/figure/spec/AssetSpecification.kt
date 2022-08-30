@@ -1,6 +1,6 @@
-package io.provenance.spec
+package tech.figure.spec
 
-import io.provenance.spec.util.SpecBuilder
+import tech.figure.spec.util.SpecBuilder
 
 val AssetSpecifications: List<AssetSpecification> = listOf(
     CollectableSpecification,
@@ -11,7 +11,6 @@ val AssetSpecifications: List<AssetSpecification> = listOf(
     PropertySpecification,
     ShareclassSpecification
 )
-
 
 interface AssetSpecification {
 

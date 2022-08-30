@@ -1,4 +1,4 @@
-package io.provenance.spec
+package tech.figure.spec
 
 import com.google.protobuf.ByteString
 import com.google.protobuf.Message
@@ -17,7 +17,7 @@ import io.provenance.metadata.v1.*
 import io.provenance.scope.util.MetadataAddress
 import io.provenance.scope.util.ProtoJsonUtil.toJson
 import io.provenance.scope.util.toByteString
-import io.provenance.spec.util.ProvenanceNetworkType
+import tech.figure.spec.util.ProvenanceNetworkType
 import java.net.URI
 import java.util.*
 

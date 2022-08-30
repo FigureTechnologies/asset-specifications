@@ -1,4 +1,4 @@
-package io.provenance.spec
+package tech.figure.spec
 
 import com.google.protobuf.ByteString
 import cosmos.crypto.secp256k1.Keys
@@ -13,7 +13,7 @@ import io.provenance.hdwallet.bip39.MnemonicWords
 import io.provenance.hdwallet.wallet.Account
 import io.provenance.hdwallet.wallet.Wallet
 import io.provenance.scope.util.ProtoJsonUtil.toJson
-import io.provenance.spec.util.ProvenanceNetworkType
+import tech.figure.spec.util.ProvenanceNetworkType
 import java.net.URI
 
 /*
